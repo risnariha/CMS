@@ -26,7 +26,8 @@ public class CityController {
 
     @GetMapping("/{id}")
     public City get(@PathVariable Long id) {
-        return cityRepository.findById(id).orElseThrow();
+        return cityRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("City not found"));
     }
 
     @DeleteMapping("/{id}")

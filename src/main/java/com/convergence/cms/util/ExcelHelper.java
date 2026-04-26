@@ -1,41 +1,50 @@
 package com.convergence.cms.util;
 
 import com.convergence.cms.entity.Customer;
-import org.apache.poi.ss.usermodel.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.InputStream;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelHelper {
 
     public static List<Customer> excelToCustomers(MultipartFile file) {
-        List<Customer> list = new ArrayList<>();
 
-        try {
-            InputStream is = file.getInputStream();
-            Workbook workbook = WorkbookFactory.create(is);
-            Sheet sheet = workbook.getSheetAt(0);
+        List<Customer> customers = new ArrayList<>();
 
-            for (Row row : sheet) {
-                if (row.getRowNum() == 0) continue;
+        if (file == null || file.isEmpty()) {
+            throw new RuntimeException("File is empty");
+        }
 
-                Customer c = new Customer();
-                c.setName(row.getCell(0).getStringCellValue());
-                c.setNic(row.getCell(1).getStringCellValue());
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(file.getInputStream()))) {
 
-                list.add(c);
+            String line;
+            boolean first = true;
 
-                // MEMORY SAFE (batch flush idea)
-                if (list.size() == 1000) {
-                    // send to DB batch (optimize later)
+            while ((line = br.readLine()) != null) {
+
+                if (first) {
+                    first = false;
+                    continue;
+                }
+
+                String[] data = line.split(",");
+
+                if (data.length >= 2) {
+                    Customer c = new Customer();
+                    c.setName(data[0].trim());
+                    c.setNic(data[1].trim());
+                    customers.add(c);
                 }
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("File processing error: " + e.getMessage(), e);
         }
 
-        return list;
+        return customers;
     }
 }

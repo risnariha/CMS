@@ -26,7 +26,8 @@ public class CountryController {
 
     @GetMapping("/{id}")
     public Country get(@PathVariable Long id) {
-        return countryRepository.findById(id).orElseThrow();
+        return countryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Country not found"));
     }
 
     @DeleteMapping("/{id}")

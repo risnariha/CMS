@@ -25,7 +25,8 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Country getById(Long id) {
-        return repo.findById(id).orElseThrow();
+        return repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Country not found"));
     }
 
     @Override

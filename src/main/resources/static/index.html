@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="hero">
+        <div class="hero__copy">
+            <p class="eyebrow">Convergence CMS</p>
+            <h1>Customer records, locations, and uploads in one workspace.</h1>
+            <p class="hero__text">
+                Manage customers, create cities and countries, and bulk upload records from Excel using the existing Spring APIs.
+            </p>
+        </div>
+        <div class="hero__stats">
+            <div class="stat-card">
+                <span class="stat-card__label">Customers</span>
+                <strong id="customerCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span class="stat-card__label">Cities</span>
+                <strong id="cityCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span class="stat-card__label">Countries</span>
+                <strong id="countryCount">0</strong>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="panel panel--wide">
+            <div class="panel__header">
+                <div>
+                    <p class="panel__eyebrow">Customer Desk</p>
+                    <h2>Create or update a customer</h2>
+                </div>
+                <button id="resetCustomerForm" class="button button--ghost" type="button">Reset form</button>
+            </div>
+
+            <form id="customerForm" class="stack">
+                <input type="hidden" id="customerId">
+
+                <div class="grid grid--3">
+                    <label class="field">
+                        <span>Name</span>
+                        <input id="customerName" name="name" type="text" placeholder="Customer name" required>
+                    </label>
+                    <label class="field">
+                        <span>Date of birth</span>
+                        <input id="customerDob" name="dob" type="date" required>
+                    </label>
+                    <label class="field">
+                        <span>NIC</span>
+                        <input id="customerNic" name="nic" type="text" placeholder="NIC / ID number" required>
+                    </label>
+                </div>
+
+                <label class="field">
+                    <span>Mobile numbers</span>
+                    <input id="mobileNumbers" name="mobileNumbers" type="text" placeholder="Comma separated values">
+                </label>
+
+                <div class="card">
+                    <div class="card__header">
+                        <div>
+                            <h3>Address book</h3>
+                            <p>Add one or more addresses for the customer.</p>
+                        </div>
+                        <button id="addAddressRow" class="button button--secondary" type="button">Add address</button>
+                    </div>
+                    <div id="addressRows" class="stack stack--tight"></div>
+                </div>
+
+                <label class="field">
+                    <span>Family members</span>
+                    <select id="familyMembers" multiple size="5"></select>
+                    <small>Use Ctrl/Cmd + click to select multiple customers.</small>
+                </label>
+
+                <div class="actions">
+                    <button class="button" type="submit">Save customer</button>
+                    <button id="deleteCustomer" class="button button--danger" type="button" disabled>Delete selected</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="panel__header">
+                <div>
+                    <p class="panel__eyebrow">Bulk Import</p>
+                    <h2>Excel upload</h2>
+                </div>
+            </div>
+
+            <form id="uploadForm" class="stack">
+                <label class="field">
+                    <span>Workbook</span>
+                    <input id="uploadFile" type="file" accept=".xlsx,.xls" required>
+                </label>
+                <button class="button" type="submit">Upload file</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="panel__header">
+                <div>
+                    <p class="panel__eyebrow">Reference Data</p>
+                    <h2>Countries</h2>
+                </div>
+            </div>
+            <form id="countryForm" class="inline-form">
+                <input id="countryName" type="text" placeholder="Add country" required>
+                <button class="button button--secondary" type="submit">Save</button>
+            </form>
+            <div id="countryList" class="pill-list"></div>
+        </section>
+
+        <section class="panel">
+            <div class="panel__header">
+                <div>
+                    <p class="panel__eyebrow">Reference Data</p>
+                    <h2>Cities</h2>
+                </div>
+            </div>
+            <form id="cityForm" class="inline-form">
+                <input id="cityName" type="text" placeholder="Add city" required>
+                <button class="button button--secondary" type="submit">Save</button>
+            </form>
+            <div id="cityList" class="pill-list"></div>
+        </section>
+
+        <section class="panel panel--wide">
+            <div class="panel__header">
+                <div>
+                    <p class="panel__eyebrow">Directory</p>
+                    <h2>Customers</h2>
+                </div>
+                <label class="field field--search">
+                    <span>Search by NIC</span>
+                    <input id="nicSearch" type="text" placeholder="Type NIC to filter locally">
+                </label>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>NIC</th>
+                        <th>Date of birth</th>
+                        <th>Mobiles</th>
+                        <th>Addresses</th>
+                        <th>Family</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customerTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<template id="addressRowTemplate">
+    <div class="address-row">
+        <label class="field">
+            <span>Line 1</span>
+            <input data-field="line1" type="text" placeholder="Address line 1" required>
+        </label>
+        <label class="field">
+            <span>Line 2</span>
+            <input data-field="line2" type="text" placeholder="Address line 2">
+        </label>
+        <label class="field">
+            <span>City</span>
+            <input data-field="city" type="text" placeholder="City" required>
+        </label>
+        <label class="field">
+            <span>Country</span>
+            <input data-field="country" type="text" placeholder="Country" required>
+        </label>
+        <button class="button button--ghost address-row__remove" type="button">Remove</button>
+    </div>
+</template>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

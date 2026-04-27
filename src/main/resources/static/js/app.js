@@ -31,6 +31,7 @@ const elements = {
     countryList: document.getElementById("countryList"),
     cityForm: document.getElementById("cityForm"),
     cityName: document.getElementById("cityName"),
+    cityCountryName: document.getElementById("cityCountryName"),
     cityList: document.getElementById("cityList"),
     toast: document.getElementById("toast")
 };
@@ -146,9 +147,12 @@ function renderReferenceList(container, items, onDelete) {
     items.forEach((item) => {
         const pill = document.createElement("div");
         pill.className = "pill";
+        const label = item.country?.name
+            ? `${item.name} (${item.country.name})`
+            : (item.name || "");
         pill.innerHTML = `
-            <span>${escapeHtml(item.name || "")}</span>
-            <button type="button" aria-label="Delete ${escapeHtml(item.name || "")}">&times;</button>
+            <span>${escapeHtml(label)}</span>
+            <button type="button" aria-label="Delete ${escapeHtml(label)}">&times;</button>
         `;
         pill.querySelector("button").addEventListener("click", () => onDelete(item.id));
         container.appendChild(pill);
@@ -316,7 +320,10 @@ async function saveCity(event) {
     event.preventDefault();
 
     try {
-        await api.createCity(elements.cityName.value.trim());
+        await api.createCity(
+            elements.cityName.value.trim(),
+            elements.cityCountryName.value.trim()
+        );
         elements.cityForm.reset();
         showToast("City saved");
         await refreshAll();

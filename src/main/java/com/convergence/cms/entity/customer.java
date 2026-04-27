@@ -17,6 +17,7 @@ public class Customer {
     private String name;
 
     @Temporal(TemporalType.DATE)
+    @Column(name = "date_of_birth")
     private Date dob;
 
     @Column(unique = true)

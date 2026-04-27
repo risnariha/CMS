@@ -78,8 +78,10 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("File is required");
         }
 
-        List<Customer> customers = ExcelHelper.excelToCustomers(file);
-        customerRepo.saveAll(customers);
+        List<CustomerDTO> customers = ExcelHelper.excelToCustomerDtos(file);
+        for (CustomerDTO customer : customers) {
+            create(customer);
+        }
     }
 
     // =========================
@@ -104,18 +106,19 @@ public class CustomerServiceImpl implements CustomerService {
                 a.setLine1(aDto.getLine1());
                 a.setLine2(aDto.getLine2());
 
-                City city = cityRepo.findByName(aDto.getCity())
-                        .orElseGet(() -> {
-                            City newCity = new City();
-                            newCity.setName(aDto.getCity());
-                            return cityRepo.save(newCity);
-                        });
-
                 Country country = countryRepo.findByName(aDto.getCountry())
                         .orElseGet(() -> {
                             Country newCountry = new Country();
                             newCountry.setName(aDto.getCountry());
                             return countryRepo.save(newCountry);
+                        });
+
+                City city = cityRepo.findByNameAndCountry_Name(aDto.getCity(), country.getName())
+                        .orElseGet(() -> {
+                            City newCity = new City();
+                            newCity.setName(aDto.getCity());
+                            newCity.setCountry(country);
+                            return cityRepo.save(newCity);
                         });
 
                 a.setCity(city);

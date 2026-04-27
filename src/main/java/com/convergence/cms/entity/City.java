@@ -13,4 +13,8 @@ public class City {
     private Long id;
 
     private String name;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "country_id", nullable = false)
+    private Country country;
 }

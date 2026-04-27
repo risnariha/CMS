@@ -57,11 +57,11 @@ export const api = {
     getCities() {
         return request("/cities");
     },
-    createCity(name) {
+    createCity(name, countryName) {
         return request("/cities", {
             method: "POST",
             headers: JSON_HEADERS,
-            body: JSON.stringify({ name })
+            body: JSON.stringify({ name, countryName })
         });
     },
     deleteCity(id) {

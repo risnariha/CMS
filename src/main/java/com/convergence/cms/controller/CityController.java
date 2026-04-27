@@ -1,10 +1,12 @@
 package com.convergence.cms.controller;
 
+import com.convergence.cms.dto.CityDTO;
 import com.convergence.cms.entity.City;
-import com.convergence.cms.repository.CityRepository;
+import com.convergence.cms.service.CityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -12,26 +14,25 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CityController {
 
-    private final CityRepository cityRepository;
+    private final CityService cityService;
 
     @PostMapping
-    public City create(@RequestBody City city) {
-        return cityRepository.save(city);
+    public City create(@Valid @RequestBody CityDTO city) {
+        return cityService.create(city);
     }
 
     @GetMapping
     public List<City> getAll() {
-        return cityRepository.findAll();
+        return cityService.getAll();
     }
 
     @GetMapping("/{id}")
     public City get(@PathVariable Long id) {
-        return cityRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("City not found"));
+        return cityService.getById(id);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-        cityRepository.deleteById(id);
+        cityService.delete(id);
     }
 }

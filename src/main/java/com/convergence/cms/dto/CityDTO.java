@@ -11,4 +11,7 @@ public class CityDTO {
 
     @NotBlank(message = "City name is required")
     private String name;
+
+    @NotBlank(message = "Country name is required")
+    private String countryName;
 }

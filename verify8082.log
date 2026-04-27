@@ -1,0 +1,150 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.convergence:cms >-------------------------
+[INFO] Building cms 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ cms >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ cms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ cms ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ cms ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ cms ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ cms <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ cms ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-04-27 14:53:18.472  INFO 4716 --- [           main] com.convergence.cms.CmsApplication       : Starting CmsApplication using Java 1.8.0_202 on DESKTOP-BCC5UDA with PID 4716 (C:\Users\RS COMPUTERS\Documents\CMS\target\classes started by Risna Riha in C:\Users\RS COMPUTERS\Documents\CMS)
+2026-04-27 14:53:18.477  INFO 4716 --- [           main] com.convergence.cms.CmsApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-04-27 14:53:19.489  INFO 4716 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-27 14:53:19.586  INFO 4716 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 4 JPA repository interfaces.
+2026-04-27 14:53:20.955  INFO 4716 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2026-04-27 14:53:20.973  INFO 4716 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27 14:53:20.974  INFO 4716 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-04-27 14:53:21.276  INFO 4716 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-27 14:53:21.276  INFO 4716 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2735 ms
+2026-04-27 14:53:21.572  INFO 4716 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-27 14:53:21.650  INFO 4716 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2026-04-27 14:53:21.894  INFO 4716 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-04-27 14:53:22.215  INFO 4716 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-27 14:53:22.342  INFO 4716 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-27 14:53:22.361  INFO 4716 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2026-04-27 14:53:23.411  INFO 4716 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-04-27 14:53:23.432  INFO 4716 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-27 14:53:24.109  WARN 4716 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-27 14:53:24.321  INFO 4716 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-04-27 14:53:24.581  INFO 4716 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2026-04-27 14:53:24.593  INFO 4716 --- [           main] com.convergence.cms.CmsApplication       : Started CmsApplication in 6.713 seconds (JVM running for 7.38)
+2026-04-27 14:53:24.683  INFO 4716 --- [nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-27 14:53:24.683  INFO 4716 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-27 14:53:24.685  INFO 4716 --- [nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_ where customer0_.nic=?
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_ where country0_.name=?
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_ inner join country country1_ on city0_.country_id=country1_.id where city0_.name=? and country1_.name=?
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+Hibernate: insert into address (city_id, country_id, line1, line2) values (?, ?, ?, ?)
+Hibernate: insert into customer_addresses (customer_id, addresses_id) values (?, ?)
+Hibernate: insert into customer_mobile_numbers (customer_id, mobile_numbers) values (?, ?)
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select mobilenumb0_.customer_id as customer1_6_0_, mobilenumb0_.mobile_numbers as mobile_n2_6_0_ from customer_mobile_numbers mobilenumb0_ where mobilenumb0_.customer_id=?
+Hibernate: select familymemb0_.customer_id as customer1_5_0_, familymemb0_.family_members_id as family_m2_5_0_, customer1_.id as id1_3_1_, customer1_.date_of_birth as date_of_2_3_1_, customer1_.name as name3_3_1_, customer1_.nic as nic4_3_1_ from customer_family_members familymemb0_ inner join customer customer1_ on familymemb0_.family_members_id=customer1_.id where familymemb0_.customer_id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_ where customer0_.nic=?
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_ where country0_.name=?
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_ inner join country country1_ on city0_.country_id=country1_.id where city0_.name=? and country1_.name=?
+Hibernate: insert into city (country_id, name) values (?, ?)
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+Hibernate: insert into address (city_id, country_id, line1, line2) values (?, ?, ?, ?)
+Hibernate: insert into customer_addresses (customer_id, addresses_id) values (?, ?)
+Hibernate: insert into customer_mobile_numbers (customer_id, mobile_numbers) values (?, ?)
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select mobilenumb0_.customer_id as customer1_6_0_, mobilenumb0_.mobile_numbers as mobile_n2_6_0_ from customer_mobile_numbers mobilenumb0_ where mobilenumb0_.customer_id=?
+Hibernate: select familymemb0_.customer_id as customer1_5_0_, familymemb0_.family_members_id as family_m2_5_0_, customer1_.id as id1_3_1_, customer1_.date_of_birth as date_of_2_3_1_, customer1_.name as name3_3_1_, customer1_.nic as nic4_3_1_ from customer_family_members familymemb0_ inner join customer customer1_ on familymemb0_.family_members_id=customer1_.id where familymemb0_.customer_id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: select mobilenumb0_.customer_id as customer1_6_0_, mobilenumb0_.mobile_numbers as mobile_n2_6_0_ from customer_mobile_numbers mobilenumb0_ where mobilenumb0_.customer_id=?
+Hibernate: select familymemb0_.customer_id as customer1_5_0_, familymemb0_.family_members_id as family_m2_5_0_, customer1_.id as id1_3_1_, customer1_.date_of_birth as date_of_2_3_1_, customer1_.name as name3_3_1_, customer1_.nic as nic4_3_1_ from customer_family_members familymemb0_ inner join customer customer1_ on familymemb0_.family_members_id=customer1_.id where familymemb0_.customer_id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: select customer0_.id as id1_3_0_, customer0_.date_of_birth as date_of_2_3_0_, customer0_.name as name3_3_0_, customer0_.nic as nic4_3_0_ from customer customer0_ where customer0_.id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: delete from customer_addresses where customer_id=?
+Hibernate: delete from customer_family_members where customer_id=?
+Hibernate: delete from customer_mobile_numbers where customer_id=?
+Hibernate: delete from address where id=?
+Hibernate: delete from customer where id=?
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select mobilenumb0_.customer_id as customer1_6_0_, mobilenumb0_.mobile_numbers as mobile_n2_6_0_ from customer_mobile_numbers mobilenumb0_ where mobilenumb0_.customer_id=?
+Hibernate: select familymemb0_.customer_id as customer1_5_0_, familymemb0_.family_members_id as family_m2_5_0_, customer1_.id as id1_3_1_, customer1_.date_of_birth as date_of_2_3_1_, customer1_.name as name3_3_1_, customer1_.nic as nic4_3_1_ from customer_family_members familymemb0_ inner join customer customer1_ on familymemb0_.family_members_id=customer1_.id where familymemb0_.customer_id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: select customer0_.id as id1_3_0_, customer0_.date_of_birth as date_of_2_3_0_, customer0_.name as name3_3_0_, customer0_.nic as nic4_3_0_ from customer customer0_ where customer0_.id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: delete from customer_addresses where customer_id=?
+Hibernate: delete from customer_family_members where customer_id=?
+Hibernate: delete from customer_mobile_numbers where customer_id=?
+Hibernate: delete from address where id=?
+Hibernate: delete from customer where id=?
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_ where customer0_.nic=?
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_ where country0_.name=?
+Hibernate: insert into country (name) values (?)
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_ inner join country country1_ on city0_.country_id=country1_.id where city0_.name=? and country1_.name=?
+Hibernate: insert into city (country_id, name) values (?, ?)
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+Hibernate: insert into address (city_id, country_id, line1, line2) values (?, ?, ?, ?)
+Hibernate: insert into customer_addresses (customer_id, addresses_id) values (?, ?)
+Hibernate: insert into customer_mobile_numbers (customer_id, mobile_numbers) values (?, ?)
+Hibernate: select city0_.id as id1_1_, city0_.country_id as country_3_1_, city0_.name as name2_1_ from city city0_
+Hibernate: select country0_.id as id1_2_, country0_.name as name2_2_ from country country0_
+Hibernate: select customer0_.id as id1_3_, customer0_.date_of_birth as date_of_2_3_, customer0_.name as name3_3_, customer0_.nic as nic4_3_ from customer customer0_
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select mobilenumb0_.customer_id as customer1_6_0_, mobilenumb0_.mobile_numbers as mobile_n2_6_0_ from customer_mobile_numbers mobilenumb0_ where mobilenumb0_.customer_id=?
+Hibernate: select country0_.id as id1_2_0_, country0_.name as name2_2_0_ from country country0_ where country0_.id=?
+Hibernate: select familymemb0_.customer_id as customer1_5_0_, familymemb0_.family_members_id as family_m2_5_0_, customer1_.id as id1_3_1_, customer1_.date_of_birth as date_of_2_3_1_, customer1_.name as name3_3_1_, customer1_.nic as nic4_3_1_ from customer_family_members familymemb0_ inner join customer customer1_ on familymemb0_.family_members_id=customer1_.id where familymemb0_.customer_id=?
+Hibernate: select addresses0_.customer_id as customer1_4_0_, addresses0_.addresses_id as addresse2_4_0_, address1_.id as id1_0_1_, address1_.city_id as city_id4_0_1_, address1_.country_id as country_5_0_1_, address1_.line1 as line2_0_1_, address1_.line2 as line3_0_1_, city2_.id as id1_1_2_, city2_.country_id as country_3_1_2_, city2_.name as name2_1_2_, country3_.id as id1_2_3_, country3_.name as name2_2_3_, country4_.id as id1_2_4_, country4_.name as name2_2_4_ from customer_addresses addresses0_ inner join address address1_ on addresses0_.addresses_id=address1_.id left outer join city city2_ on address1_.city_id=city2_.id left outer join country country3_ on city2_.country_id=country3_.id left outer join country country4_ on address1_.country_id=country4_.id where addresses0_.customer_id=?
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+2026-04-27 15:02:01.284  WARN 4716 --- [nio-8082-exec-4] o.m.jdbc.message.server.ErrorPacket      : Error: 1048-23000: Column 'date_of_birth' cannot be null
+2026-04-27 15:02:01.288  WARN 4716 --- [nio-8082-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2026-04-27 15:02:01.288 ERROR 4716 --- [nio-8082-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : (conn=115) Column 'date_of_birth' cannot be null
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+2026-04-27 15:02:09.583  WARN 4716 --- [io-8082-exec-10] o.m.jdbc.message.server.ErrorPacket      : Error: 1048-23000: Column 'date_of_birth' cannot be null
+2026-04-27 15:02:09.584  WARN 4716 --- [io-8082-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2026-04-27 15:02:09.584 ERROR 4716 --- [io-8082-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : (conn=115) Column 'date_of_birth' cannot be null
+Hibernate: insert into customer (date_of_birth, name, nic) values (?, ?, ?)
+2026-04-27 15:02:16.292  WARN 4716 --- [nio-8082-exec-2] o.m.jdbc.message.server.ErrorPacket      : Error: 1048-23000: Column 'date_of_birth' cannot be null
+2026-04-27 15:02:16.293  WARN 4716 --- [nio-8082-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1048, SQLState: 23000
+2026-04-27 15:02:16.293 ERROR 4716 --- [nio-8082-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : (conn=117) Column 'date_of_birth' cannot be null

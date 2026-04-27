@@ -20,7 +20,8 @@ Spring Boot customer management application with a simple browser UI for managin
 - MariaDB
 - Lombok
 - Apache POI
-- H2 for tests
+- JUnit 5 for tests
+- H2 in-memory database for tests
 
 ## Project Structure
 
@@ -48,7 +49,7 @@ src/main/resources
 
 ## Configuration
 
-Application settings are in [application.properties](C:\Users\RS%20COMPUTERS\Documents\CMS\src\main\resources\application.properties).
+Application settings are in [application.properties](/C:/Users/RS%20COMPUTERS/IdeaProjects/CMS/src/main/resources/application.properties).
 
 Default local database configuration:
 

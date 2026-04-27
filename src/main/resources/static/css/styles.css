@@ -1,13 +1,13 @@
 :root {
-    --bg: #f7f3ea;
+    --bg: #8c50d8;
     --bg-strong: #e8dfce;
-    --surface: rgba(255, 253, 248, 0.92);
+    --surface: rgb(236 215 251 / 0.92);
     --surface-strong: #fffdf8;
-    --ink: #1e1d1a;
-    --muted: #675f52;
+    --ink: rgb(63 10 106 / 0.92);
+    --muted: rgb(140 9 244 / 0.92);
     --line: rgba(74, 61, 44, 0.14);
-    --primary: #a63f23;
-    --primary-deep: #7d2710;
+    --primary: #9535d0;
+    --primary-deep: #3a0382;
     --accent: #2d7a64;
     --danger: #b42318;
     --shadow: 0 20px 50px rgba(64, 38, 16, 0.12);
@@ -28,7 +28,7 @@ body {
     background:
         radial-gradient(circle at top left, rgba(166, 63, 35, 0.18), transparent 30%),
         radial-gradient(circle at top right, rgba(45, 122, 100, 0.16), transparent 26%),
-        linear-gradient(180deg, #fbf7ef 0%, #f1e7d8 100%);
+        linear-gradient(180deg, rgb(45 10 74 / 0.92) 0%, rgb(208 159 251 / 0.92) 100%);
 }
 
 button,
@@ -52,7 +52,7 @@ select {
     border: 1px solid var(--line);
     border-radius: calc(var(--radius-lg) + 8px);
     background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 247, 236, 0.92)),
+        linear-gradient(135deg, rgb(208 159 251 / 0.92), rgb(208 159 251 / 0.92)),
         var(--surface);
     box-shadow: var(--shadow);
 }
